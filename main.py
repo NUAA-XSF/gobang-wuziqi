@@ -1,7 +1,6 @@
 #----------------------------
 # Gobang-wuziqi
 # author: NUAA-XSF
-# test test
 #----------------------------
 
 import pygame
