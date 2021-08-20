@@ -55,6 +55,7 @@ def show_start_screen(surf):
             if event.type == pygame.QUIT:
                 waiting = False
                 pygame.quit()
+                sys.exit()
             if event.type == pygame.KEYUP:
                 waiting = False
         screen.fill(BLACK)
