@@ -35,10 +35,7 @@ snd_dir = os.path.join(abs_dir,'snd')
 background = pygame.image.load(os.path.join(img_dir,'starfield.png')).convert()
 background = pygame.transform.scale(background, (WIDTH,HEIGHT))
 background_rect = background.get_rect()
-pygame.mixer.music.load(os.path.join(snd_dir, 'song18.ogg'))
-pygame.mixer.music.set_volume(0.2)
 drop_piece_snd = pygame.mixer.Sound(os.path.join(snd_dir, 'Pickup_Coin3.wav'))
-win_snd = pygame.mixer.Sound(os.path.join(snd_dir,'round_end.wav'))
 
 def draw_text(surf, text, size, x, y):
     font = pygame.font.Font(os.path.join(font_dir, 'SourceHanSansSC-Normal.otf'), size)
@@ -188,7 +185,6 @@ class CheckerBoard(pygame.sprite.Sprite):
                     drop_piece_snd.play()
 
                     if self.check_win(px, py):
-                        win_snd.play()
                         self.game_over = True
                         self.last_win = pygame.time.get_ticks()
 
@@ -279,7 +275,6 @@ menu = Menu()
 all_sprites.add(checker_board)
 all_sprites.add(menu)
 # Game loop
-pygame.mixer.music.play(loops=-1)
 show_start_screen(screen)
 running = True
 while running:
